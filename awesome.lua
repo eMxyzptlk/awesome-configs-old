@@ -421,7 +421,7 @@ altkey = "Mod1"
 
 -- Environment programs
 env = {
-    browser = "firefox ",
+    browser = "google-chrome ",
     man = "urxvt -e man ",
     terminal = "urxvt ", 
     screen = "urxvt -e screen",
