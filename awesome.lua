@@ -438,7 +438,7 @@ env = {
     reboot = "sudo /sbin/reboot",
     hibernate = "sudo /usr/sbin/pm-hibernate",
     rotate = "rotator",
-    rfkill = { block = "sudo rfkill block 2", unblock = "sudo rfkill unblock 2" },
+    rfkill = { block = "sudo rfkill block 0", unblock = "sudo rfkill unblock 0" },
 }
 
 -- Pipelets
