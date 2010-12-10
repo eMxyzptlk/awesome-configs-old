@@ -4,7 +4,7 @@ trap "pkill -P $$" SIGINT
 trap "pkill -P $$" EXIT
 
 RFKILL=`which rfkill 2> /dev/null`
-WIFI_RFKILL_ID=2
+WIFI_RFKILL_ID=0
 
 $RFKILL event | while read l ; do
     echo -n "S:"
