@@ -426,7 +426,6 @@ env = {
     terminal = "urxvt ", 
     screen = "urxvt -e zsh -c '" ..os.getenv("HOME").. "/.filesystem/bin/Screen Default'",
     fileman = "nautilus",
-    terminal_root = "urxvt -e su -c screen",
     im = "pidgin ",
     editor = os.getenv("EDITOR") or "urxvt -e vim ",
     home_dir = os.getenv("HOME"),
