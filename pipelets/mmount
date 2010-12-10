@@ -1,29 +1,28 @@
 #!/bin/sh
 
+trap "pkill -P $$" SIGINT
+trap "pkill -P $$" EXIT
+
+INOWAIT=/usr/bin/inotifywait
+
 parse() {
-	awk '{print $3}' | grep -v -E '/proc|/dev|/bus|/sys|/lib' | grep -w -v /
+	cat /proc/mounts | 
+    awk '{print $2}' | 
+    grep -v -E '/proc|/dev|/bus|/sys|/lib' | 
+    grep -w -v /
 }
 
+while true ; do
+    for m in `parse` ; do
+        printf "[%s] " `basename $m`
+    done
+    echo
 
-supply() {
-	exec tail -n0 -F "/var/log/messages" 
-}
-
-filter() {
-	echo "wake"
-	exec grep --line-buffered "mount"
-}
-
-process() {
-	while read x ; do
-		for m in `mount | parse` ; do
-			printf "[%s] " `basename $m`
-		done
-		echo
-	done
-}
-
-{ supply | filter | process ; } &
-trap "pkill -P $!" EXIT
-wait
+    if [ -e $INOWAIT ] ; then
+        $INOWAIT /etc/mtab >/dev/null 2>&1
+        sleep 0.2
+    else
+        sleep 20
+    fi
+done
 
