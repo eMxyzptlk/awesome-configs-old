@@ -28,7 +28,7 @@ end
 -- to point to theme selected
 function menu(args)
     args = args or {}
-    args.default_icon = args.default_icon or "/usr/local/share/awesome/icons/awesome16.png"
+    args.default_icon = args.default_icon or "/usr/share/awesome/icons/awesome16.png"
 	local mythememenu = {}
 	local cfgpath = awful.util.getdir("config")
 	local themespath = cfgpath .. "/themes"

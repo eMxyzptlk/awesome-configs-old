@@ -58,7 +58,7 @@ theme.taglist_squares_sel   = theme.shared .. "/themes/default/taglist/squarefw.
 theme.taglist_squares_unsel = theme.shared .. "/themes/default/taglist/squarew.png"
 
 -- MISC
-theme.wallpaper_cmd         = nil --{ "awsetbg /usr/local/share/awesome/themes/sky/sky-background.png" }
+theme.wallpaper_cmd         = nil --{ "awsetbg /usr/share/awesome/themes/sky/sky-background.png" }
 theme.taglist_squares       = "true"
 theme.titlebar_close_button = "true"
 theme.menu_width            = "200"
