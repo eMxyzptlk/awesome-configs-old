@@ -1,6 +1,5 @@
 #!/bin/sh
 
-export LANG=ru_RU.utf-8 
 while true ; do
 	date +'%a %d %b, %H:%M'
 	sleep 60
