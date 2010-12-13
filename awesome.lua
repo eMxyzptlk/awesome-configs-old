@@ -885,6 +885,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(1) end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx(-1) end),
     awful.key({ altkey            }, "Tab", function() switch_to_client(0) end),
+    awful.key({ modkey,           }, "u", function () awful.client.urgent.jumpto() end),
+    awful.key({ modkey            }, "o", function () awful.client.movetoscreen() end),
 
     -- Layout manipulation
     awful.key({ altkey,           }, "F1", awful.tag.viewprev ),
@@ -897,6 +899,7 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey, "Control" }, "l", function () awful.tag.incncol(-1) end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts, 1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+    awful.key({ modkey            }, "s", function() awful.screen.focus_relative(1) end),
     awful.key({ altkey,           }, "e", function () 
         myrc.keybind.push_menu(chord_mpd(), chord_menu_args) 
     end),
