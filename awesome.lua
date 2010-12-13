@@ -868,7 +868,7 @@ globalkeys = awful.util.table.join(
     awful.key({                   }, "Scroll_Lock", function () awful.util.spawn(env.locker) end),
     awful.key({ modkey            }, "r", function () mypromptbox[mouse.screen]:run() end),
     awful.key({ modkey,           }, "m", function () run_or_raise("gmpc", { class = "Gmpc" }) end),
-    awful.key({ modkey            }, "p", function () awful.util.spawn("pidgin") end),
+    awful.key({ modkey            }, "p", function () awful.util.spawn(env.im) end),
     awful.key({ modkey            }, "c", function () run_or_raise("xterm -e calc", { class="XTerm", name = "calc" }) end),
 
     -- Tag hotkeys
