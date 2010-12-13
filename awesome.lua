@@ -882,8 +882,6 @@ globalkeys = awful.util.table.join(
     -- Client manipulation
     awful.key({ altkey            }, "j", function () switch_to_client(-1) end),
     awful.key({ altkey            }, "k", function () switch_to_client(1) end),
-    awful.key({ altkey            }, "1", function () switch_to_client(-1) end),
-    awful.key({ altkey            }, "2", function () switch_to_client(1) end),
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(1) end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx(-1) end),
     awful.key({ altkey            }, "Tab", function() switch_to_client(0) end),
@@ -937,7 +935,7 @@ clientkeys = awful.util.table.join(
     end),
 
     -- Client keys
-    awful.key({ altkey ,        }, "3", function(c) 
+    awful.key({ modkey }, "3", function(c)
         local menu = client_contex_menu(c)
         menu_current(menu, contextmenu_args)
     end)
