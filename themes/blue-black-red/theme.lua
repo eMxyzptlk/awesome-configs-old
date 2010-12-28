@@ -4,7 +4,10 @@
 
 theme = {}
 theme.name = "blue-black-red"
-theme.shared = "/usr/share/awesome"
+theme.shared = "/usr/local/share/awesome"
+if not awful.util.file_readable(theme.shared.."/icons/awesome16.png") then
+    theme.shared = "/usr/share/awesome"
+end
 theme.config = awful.util.getdir("config")
 theme.path = theme.config .. "/themes/" .. theme.name
 
